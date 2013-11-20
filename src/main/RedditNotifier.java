@@ -176,7 +176,7 @@ public class RedditNotifier implements WindowListener,MouseListener{
 	
 	public void reddit(){
 		try {
-			java.awt.Desktop.getDesktop().browse(new URI("http://www.reddit.com"));
+			java.awt.Desktop.getDesktop().browse(new URI("http://www.reddit.com/message/unread/"));
 		} catch (Exception e) {
 			log("Unable to launch reddit...");
 		}
