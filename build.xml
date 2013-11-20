@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project RedditNotifier">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="C:/Users/MatthewGr/Desktop/Matts/workspace/RedditNotifier/RedditNotifier.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="main.RedditNotifier"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="C:/Users/MatthewGr/Desktop/Matts/workspace/RedditNotifier/bin"/>
+            <fileset dir="C:/Users/MatthewGr/Desktop/Matts/workspace/GosuTools/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Users/MatthewGr/Desktop/Matts/workspace/RedditNotifier/lib/jReddit-1.0.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Users/MatthewGr/Desktop/Matts/workspace/RedditNotifier/lib/json-simple-1.1.1.jar"/>
+        </jar>
+    </target>
+</project>
