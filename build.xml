@@ -10,7 +10,7 @@
             </manifest>
             <fileset dir="C:/Users/MatthewGr/Desktop/Matts/workspace/RedditNotifier/bin"/>
             <fileset dir="C:/Users/MatthewGr/Desktop/Matts/workspace/GosuTools/bin"/>
-            <zipfileset excludes="META-INF/*.SF" src="C:/Users/MatthewGr/Desktop/Matts/workspace/RedditNotifier/lib/jReddit-1.0.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Users/MatthewGr/Desktop/Matts/workspace/RedditNotifier/lib/jreddit.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="C:/Users/MatthewGr/Desktop/Matts/workspace/RedditNotifier/lib/json-simple-1.1.1.jar"/>
         </jar>
     </target>
