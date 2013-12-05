@@ -3,6 +3,7 @@ package main;
 import im.goel.jreddit.user.User;
 
 import java.awt.BorderLayout;
+import java.awt.Image;
 import java.awt.MenuItem;
 import java.awt.PopupMenu;
 import java.awt.SystemTray;
@@ -38,7 +39,9 @@ public class RedditNotifier implements WindowListener,MouseListener{
 	private static JPasswordField passwordField;
 	private static JTextField messageField;
 	private GosuFrame frame;
-	private TrayIcon trayIcon; 
+	private TrayIcon trayIcon;
+	Image hasMailImage;
+	Image noMailImage;
 	
 	public static void main(String []args){
 		new RedditNotifier();
@@ -111,10 +114,12 @@ public class RedditNotifier implements WindowListener,MouseListener{
 		popup.add(openItem);
 		popup.add(exitItem);
 		try {
-			 trayIcon = new TrayIcon(ImageIO.read(new File("reddit.png")));
-			 trayIcon.setPopupMenu(popup);
-			 trayIcon.addMouseListener(this);
-			 tray.add(trayIcon);
+			noMailImage = ImageIO.read(new File("reddit_no_mail.png"));
+			hasMailImage = ImageIO.read(new File("reddit_has_mail.png"));
+			trayIcon = new TrayIcon(noMailImage);
+			trayIcon.setPopupMenu(popup);
+			trayIcon.addMouseListener(this);
+			tray.add(trayIcon);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -161,8 +166,10 @@ public class RedditNotifier implements WindowListener,MouseListener{
 					if(user.hasMail()){
 						log("NEW MAIL");
 						trayIcon.displayMessage("New Reddit Mail!", "", MessageType.INFO);
+						trayIcon.setImage(hasMailImage);
 					}else{
 						log("No new mail");
+						trayIcon.setImage(noMailImage);
 					}
 				} catch (Exception e) {
 					e.printStackTrace();
