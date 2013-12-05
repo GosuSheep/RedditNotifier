@@ -1,7 +1,5 @@
 package main;
 
-import im.goel.jreddit.user.User;
-
 import java.awt.BorderLayout;
 import java.awt.Image;
 import java.awt.MenuItem;
@@ -27,6 +25,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.Timer;
 
+import com.omrlnr.jreddit.User;
 import common.GosuFrame;
 import common.SwingOps;
 
