@@ -41,6 +41,7 @@ public class RedditNotifier implements WindowListener,MouseListener{
 	private TrayIcon trayIcon;
 	Image hasMailImage;
 	Image noMailImage;
+	Image errorImage;
 	
 	public static void main(String []args){
 		new RedditNotifier();
@@ -115,6 +116,7 @@ public class RedditNotifier implements WindowListener,MouseListener{
 		try {
 			noMailImage = ImageIO.read(new File("reddit_no_mail.png"));
 			hasMailImage = ImageIO.read(new File("reddit_has_mail.png"));
+			errorImage = ImageIO.read(new File("reddit_error.png"));
 			trayIcon = new TrayIcon(noMailImage);
 			trayIcon.setPopupMenu(popup);
 			trayIcon.addMouseListener(this);
@@ -173,6 +175,8 @@ public class RedditNotifier implements WindowListener,MouseListener{
 				} catch (Exception e) {
 					e.printStackTrace();
 					log("Unable to connect...");
+					trayIcon.displayMessage("Unable to connect!", "", MessageType.INFO);
+					trayIcon.setImage(errorImage);
 				}
 			}
 		};
